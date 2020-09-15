@@ -5,7 +5,7 @@
 # description : 
 
 import sys
-from GUI_Demo import demo
+from window_app import demo
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
 
