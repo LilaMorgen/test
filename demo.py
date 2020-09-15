@@ -8,7 +8,6 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -42,3 +41,4 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "PushButton"))
         self.radioButton.setText(_translate("MainWindow", "RadioButton"))
         self.radioButton_2.setText(_translate("MainWindow", "RadioButton"))
+
