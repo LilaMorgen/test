@@ -9,7 +9,7 @@ from window_app import demo
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
 
-def main():
+def _main():
     app = QApplication(sys.argv)
     main_window = QMainWindow()
     ui = demo.Ui_MainWindow()
@@ -19,4 +19,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    _main()
