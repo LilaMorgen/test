@@ -5,7 +5,7 @@
 # description : 
 
 import sys
-from PyQt5.QtWidgets import QDesktopWidget, QMainWindow, QApplication
+from PyQt5.QtWidgets import QHBoxLayout, QPushButton, QDesktopWidget, QMainWindow, QApplication, QWidget
 from PyQt5.QtGui import QIcon
 
 
@@ -18,10 +18,29 @@ class FirstMainWindow(QMainWindow):
 
         # 设置窗口尺寸
         self.resize(400, 300)
-
+        # 设置状态栏
         self.status = self.statusBar()
-
         self.status.showMessage('只存在5秒消息时间', 5000)
+        # 设置按钮关闭窗口
+        self.button1 = QPushButton('退出应用')
+        # 将信号与槽相连
+        self.button1.clicked.connect(self.click_button)
+        # self.button1.clicked.connect(self.close)
+
+        layout = QHBoxLayout()
+        layout.addWidget(self.button1)
+
+        mainframe = QWidget()
+        mainframe.setLayout(layout)
+
+        self.setCentralWidget(mainframe)
+
+    # 自定义槽
+    def click_button(self):
+        sender = self.sender()
+        print(sender.text() + '按钮被按下')
+        window = QApplication.instance()
+        window.quit()
 
     # 窗口居中
     def center(self):
