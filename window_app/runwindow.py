@@ -5,7 +5,7 @@
 # description : 
 
 import sys
-from window_app import hot_key
+from window_app import signal_slot
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
 
@@ -15,7 +15,7 @@ def _main():
     # 创建主窗口
     main_window = QMainWindow()
     # 创建控件实例
-    ui = hot_key.Ui_MainWindow()
+    ui = signal_slot.Ui_MainWindow()
     # 绘制窗口中的控件
     ui.setupUi(main_window)
     # 循环显示主窗口
