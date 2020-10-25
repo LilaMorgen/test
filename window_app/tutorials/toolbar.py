@@ -24,9 +24,9 @@ class Example(QMainWindow):
         exit_act.triggered.connect(qApp.quit)
 
         # 设置工具栏并命名工具栏，窗口中鼠标右击可选择显示与不显示工具栏
-        self.toolbar = self.addToolBar('Tools')
+        toolbar = self.addToolBar('Tools')
         # 在工具栏上添加操作
-        self.toolbar.addAction(exit_act)
+        toolbar.addAction(exit_act)
 
         self.setGeometry(300, 300, 300, 220)
         self.setWindowTitle('ToolBar')
