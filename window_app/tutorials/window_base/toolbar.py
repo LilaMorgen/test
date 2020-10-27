@@ -17,7 +17,7 @@ class Example(QMainWindow):
 
     def init_ui(self):
         # 设置操作
-        exit_act = QAction(QIcon('../../images/eword.ico'), 'Exit', self)
+        exit_act = QAction(QIcon('../../../images/eword.ico'), 'Exit', self)
         # 为操作设置快捷键
         exit_act.setShortcut('Ctrl+Q')
         # 将操作信号与槽相连

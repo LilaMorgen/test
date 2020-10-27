@@ -22,7 +22,7 @@ class Example(QWidget):
         # 设置窗口标题
         self.setWindowTitle('Icon')
         # 设置窗口图标
-        self.setWindowIcon(QIcon('../../images/eword.ico'))
+        self.setWindowIcon(QIcon('../../../images/eword.ico'))
         # 显示窗口
         self.show()
 

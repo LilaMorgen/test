@@ -17,7 +17,7 @@ class Example(QMainWindow):
 
     def init_ui(self):
         # 创建一个操作，&(表示Alt)
-        exit_act = QAction(QIcon('../../images/eword.ico'), '&Exit', self)
+        exit_act = QAction(QIcon('../../../images/eword.ico'), '&Exit', self)
         # 为操作创建快捷键
         exit_act.setShortcut('Ctrl+Q')
         # 创建提示，当鼠标指针悬浮在操作上，出现提示

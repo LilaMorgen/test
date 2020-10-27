@@ -57,7 +57,7 @@ class FirstMainWindow(QMainWindow):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
 
-    app.setWindowIcon(QIcon('../images/eword.ico'))
+    app.setWindowIcon(QIcon('../../images/eword.ico'))
 
     main = FirstMainWindow()
     main.show()

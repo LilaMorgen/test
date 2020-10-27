@@ -22,7 +22,7 @@ class Example(QMainWindow):
         self.setCentralWidget(text_edit)
 
         # 创建操作
-        exit_act = QAction(QIcon('../../images/eword.ico'), 'Exit', self)
+        exit_act = QAction(QIcon('../../../images/eword.ico'), 'Exit', self)
         # 设置操作快捷键
         exit_act.setShortcut('Ctrl+Q')
         # 设置鼠标悬浮于操作上时的状态提示
