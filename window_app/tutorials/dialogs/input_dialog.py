@@ -27,8 +27,10 @@ class Example(QWidget):
         self.show()
 
     def show_dialog(self):
+        # 创建输入对话框，用getText方法接收文本(text)和用户信号事件(ok)
         text, ok = QInputDialog.getText(self, 'Input Dialog', 'Enter your name:')
 
+        # 如果用户返回True,那么将接收到的文本展示在行输入框内
         if ok:
             self.le.setText(str(text))
 
