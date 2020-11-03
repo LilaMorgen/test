@@ -16,12 +16,15 @@ class Example(QWidget):
         self.init_ui()
 
     def init_ui(self):
+        # 创建颜色对象
         self.col = QColor(0, 0, 0)
 
         red_btn = QPushButton('Red', self)
+        # 将按钮设置为复选按钮
         red_btn.setCheckable(True)
         red_btn.move(10, 10)
 
+        # 将按钮复选信号连接槽
         red_btn.clicked[bool].connect(self.set_color)
 
         green_btn = QPushButton('Green', self)
@@ -36,8 +39,10 @@ class Example(QWidget):
 
         blue_btn.clicked[bool].connect(self.set_color)
 
+        # 创建框架对象
         self.square = QFrame(self)
         self.square.setGeometry(150, 20, 100, 100)
+        # 设置框架背景颜色
         self.square.setStyleSheet('QWidget {background-color: %s}'
                                   % self.col.name())
 
@@ -46,13 +51,16 @@ class Example(QWidget):
         self.show()
 
     def set_color(self, pressed):
+        # 获取信号发送者的信息
         source = self.sender()
 
+        # 如果按钮信号值为True，赋值255，否则赋值0
         if pressed:
             val = 255
         else:
             val = 0
 
+        # 判断信号发送者的标签，根据标签不同进行不同的颜色设置
         if source.text() == 'Red':
             self.col.setRed(val)
         elif source.text() == 'Green':

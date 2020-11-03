@@ -17,11 +17,14 @@ class Example(QWidget):
         self.init_ui()
 
     def init_ui(self):
+        # 创建滑条对象
         sld = QSlider(Qt.Horizontal, self)
         sld.setFocusPolicy(Qt.NoFocus)
         sld.setGeometry(30, 40, 200, 30)
+        # 将滑条数字信号与槽相连
         sld.valueChanged[int].connect(self.change_value)
 
+        # 创建标签对象，并设置图像标签
         self.label = QLabel(self)
         self.label.setPixmap(QPixmap('../../../images/mute.png'))
         self.label.setGeometry(250, 40, 30, 30)
@@ -31,6 +34,7 @@ class Example(QWidget):
         self.show()
 
     def change_value(self, value):
+        # 根据数字信号的不同，设置不同图像标签
         if value == 0:
             self.label.setPixmap(QPixmap('../../../images/mute.png'))
         elif 0 < value <= 30:
