@@ -39,7 +39,7 @@ class MainWindow(QMainWindow):
         statusbar = QStatusBar(self)
         self.setStatusBar(statusbar)
 
-        button_action = QAction(QIcon('../icons/16/045.png'),  'My Action', self)
+        button_action = QAction(QIcon('../icons/16/045.png'),  'Home', self)
         button_action.setStatusTip('This is action.')
         button_action.triggered.connect(self.onMyToolBarButtonClick)
         button_action.setCheckable(True)
@@ -47,9 +47,24 @@ class MainWindow(QMainWindow):
 
         toolbar.addSeparator()
 
+        button_action2 = QAction(QIcon('../icons/named/bug.png'),  'Debug', self)
+        button_action2.setStatusTip('This is action.')
+        button_action2.triggered.connect(self.onMyToolBarButtonClick)
+        button_action2.setCheckable(True)
+        toolbar.addAction(button_action2)
+
+        toolbar.addSeparator()
+
         toolbar.addWidget(QLabel('Hello'))
         toolbar.addSeparator()
         toolbar.addWidget(QCheckBox())
+
+        menu = self.menuBar()
+        file_menu = menu.addMenu('&File')
+        file_menu.addAction(button_action)
+        file_menu.addSeparator()
+        file_menu.addAction(button_action2)
+
 
     def onMyToolBarButtonClick(self, s):
         print('click', s)
