@@ -20,11 +20,17 @@ class MainWindow(QMainWindow):
         self.setWindowTitle('Label')
 
         lbl = QLabel('Hello')
+        lbl.setText('Yes')  # 两种设置标签文本的方法
+        # 在标签上设置位图
         lbl.setPixmap(QPixmap('../../icons/named/heart.png'))
         # lbl.setScaledContents(True)  # 缩放标签，使标签填充满窗口
+        # 获取当前字体
         font = lbl.font()
+        # 更新字体，设置字体大小
         font.setPointSize(30)
+        # 应用字体
         lbl.setFont(font)
+        # 设置标签对齐方式，使用'|'进行对齐方式的组合
         lbl.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
         self.setCentralWidget(lbl)
 
