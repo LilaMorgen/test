@@ -43,6 +43,7 @@ class MainWindow(QMainWindow):
         button_action.setStatusTip('This is action.')
         button_action.triggered.connect(self.onMyToolBarButtonClick)
         button_action.setCheckable(True)
+        button_action.setShortcut(QKeySequence('Ctrl+h'))
         toolbar.addAction(button_action)
 
         toolbar.addSeparator()
@@ -51,6 +52,7 @@ class MainWindow(QMainWindow):
         button_action2.setStatusTip('This is action.')
         button_action2.triggered.connect(self.onMyToolBarButtonClick)
         button_action2.setCheckable(True)
+        button_action2.setShortcut(QKeySequence('Ctrl+d'))
         toolbar.addAction(button_action2)
 
         toolbar.addSeparator()
@@ -59,11 +61,14 @@ class MainWindow(QMainWindow):
         toolbar.addSeparator()
         toolbar.addWidget(QCheckBox())
 
+        # add menuBar and add menu on menuBar
         menu = self.menuBar()
         file_menu = menu.addMenu('&File')
         file_menu.addAction(button_action)
         file_menu.addSeparator()
-        file_menu.addAction(button_action2)
+        # add submenu
+        file_submenu = file_menu.addMenu('Submenu')
+        file_submenu.addAction(button_action2)
 
 
     def onMyToolBarButtonClick(self, s):
