@@ -16,10 +16,12 @@ class CustomDialog(QDialog):
 
         self.setWindowTitle('Hello')
 
-        #
+        # 创建按钮
         btn = QDialogButtonBox.Ok | QDialogButtonBox.Cancel
 
+        # 将按钮放在按钮盒中
         self.buttonbox = QDialogButtonBox(btn)
+        # 将信号与槽相连
         self.buttonbox.accepted.connect(self.accept)
         self.buttonbox.rejected.connect(self.reject)
 
