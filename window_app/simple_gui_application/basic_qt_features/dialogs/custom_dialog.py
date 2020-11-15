@@ -10,6 +10,24 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 
 
+class CustomDialog(QDialog):
+    def __init__(self, *args, **kwargs):
+        super(CustomDialog, self).__init__(*args, **kwargs)
+
+        self.setWindowTitle('Hello')
+
+        #
+        btn = QDialogButtonBox.Ok | QDialogButtonBox.Cancel
+
+        self.buttonbox = QDialogButtonBox(btn)
+        self.buttonbox.accepted.connect(self.accept)
+        self.buttonbox.rejected.connect(self.reject)
+
+        self.layout = QVBoxLayout()
+        self.layout.addWidget(self.buttonbox)
+        self.setLayout(self.layout)
+
+
 class MainWindow(QMainWindow):
     def __init__(self, *args, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
@@ -33,9 +51,11 @@ class MainWindow(QMainWindow):
     def showDialog(self, s):
         print('Click', s)
 
-        dialog = QDialog(self)
-        dialog.setWindowTitle('Hello')
-        dialog.exec_()
+        dialog = CustomDialog()
+        if dialog.exec_():
+            print('Success!')
+        else:
+            print('Cancel!')
 
 
 def main():
