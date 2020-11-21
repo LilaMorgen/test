@@ -28,9 +28,31 @@ class MainWindow(QMainWindow):
         self.draw_something()
 
     def draw_something(self):
+        # step1
+        # painter = QPainter(self.label.pixmap())
+        # painter.begin(self)
+        # pen = QPen()
+        # pen.setWidth(40)
+        # pen.setColor(QColor('red'))
+        # painter.setPen(pen)
+        # # painter.drawLine(10, 10, 300, 200)
+        # painter.drawPoint(200, 150)
+        # painter.end()
+
+        # step2
+        from random import randint, choice
+        colors = ['#FFD141', '#376F9F', '#0D1F2D', '#E9EBEF', '#EB5160']
         painter = QPainter(self.label.pixmap())
-        painter.begin(self)
-        painter.drawLine(10, 10, 300, 200)
+        pen = QPen()
+        pen.setWidth(3)
+        painter.setPen(pen)
+
+        for i in range(10000):
+            # pen = painter.pen()
+            pen.setColor(QColor(choice(colors)))
+            painter.setPen(pen)
+            painter.drawPoint(200+randint(-100, 100), 150+randint(-100, 100))
+
         painter.end()
 
 
