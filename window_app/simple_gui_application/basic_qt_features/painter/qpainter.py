@@ -56,14 +56,51 @@ class MainWindow(QMainWindow):
         # painter.end()
 
         # step3
+        # from random import randint
+        # painter = QPainter(self.label.pixmap())
+        # pen = QPen()
+        # pen.setWidth(15)
+        # pen.setColor(QColor('blue'))
+        # painter.setPen(pen)
+        # painter.drawLine(QPoint(100, 100), QPoint(300, 200))
+        # painter.end()
+
+        # step4
+        # from random import randint
+        # painter = QPainter(self.label.pixmap())
+        # pen = QPen()
+        # pen.setWidth(3)
+        # pen.setColor(QColor('#EB5160'))
+        # painter.setPen(pen)
+        #
+        # brush = QBrush()
+        # brush.setColor(QColor('#FFD141'))
+        # brush.setStyle(Qt.Dense1Pattern)
+        # painter.setBrush(brush)
+
+        # painter.drawRect(50, 50, 100, 100)
+        # painter.drawRect(60, 60, 150, 100)
+        # painter.drawRect(70, 70, 100, 150)
+        # painter.drawRect(80, 80, 150, 100)
+        # painter.drawRect(90, 90, 100, 150)
+        # painter.drawRects(QRect(50, 50, 100, 100),
+        #                   QRect(60, 60, 150, 100),
+        #                   QRect(70, 70, 100, 150),
+        #                   QRect(80, 80, 150, 100),
+        #                   QRect(90, 90, 100, 150))
+        # painter.end()
+
+        # step5
         from random import randint
         painter = QPainter(self.label.pixmap())
         pen = QPen()
-        pen.setWidth(15)
-        pen.setColor(QColor('blue'))
+        pen.setWidth(3)
+        pen.setColor(QColor('#EB5160'))
         painter.setPen(pen)
-        painter.drawLine(QPoint(100, 100), QPoint(300, 200))
-        painter.end()
+        painter.drawRoundedRect(40, 40, 100, 100, 10, 10)
+        painter.drawRoundedRect(80, 80, 100, 100, 10, 50)
+        painter.drawRoundedRect(120, 120, 100, 100, 50, 10)
+        painter.drawRoundedRect(160, 160, 100, 100, 50, 50)
 
 
 def main():
