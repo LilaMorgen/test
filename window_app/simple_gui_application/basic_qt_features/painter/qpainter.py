@@ -40,19 +40,29 @@ class MainWindow(QMainWindow):
         # painter.end()
 
         # step2
-        from random import randint, choice
-        colors = ['#FFD141', '#376F9F', '#0D1F2D', '#E9EBEF', '#EB5160']
+        # from random import randint, choice
+        # colors = ['#FFD141', '#376F9F', '#0D1F2D', '#E9EBEF', '#EB5160']
+        # painter = QPainter(self.label.pixmap())
+        # pen = QPen()
+        # pen.setWidth(3)
+        # painter.setPen(pen)
+        #
+        # for i in range(10000):
+        #     # pen = painter.pen()
+        #     pen.setColor(QColor(choice(colors)))
+        #     painter.setPen(pen)
+        #     painter.drawPoint(200+randint(-100, 100), 150+randint(-100, 100))
+        #
+        # painter.end()
+
+        # step3
+        from random import randint
         painter = QPainter(self.label.pixmap())
         pen = QPen()
-        pen.setWidth(3)
+        pen.setWidth(15)
+        pen.setColor(QColor('blue'))
         painter.setPen(pen)
-
-        for i in range(10000):
-            # pen = painter.pen()
-            pen.setColor(QColor(choice(colors)))
-            painter.setPen(pen)
-            painter.drawPoint(200+randint(-100, 100), 150+randint(-100, 100))
-
+        painter.drawLine(QPoint(100, 100), QPoint(300, 200))
         painter.end()
 
 
