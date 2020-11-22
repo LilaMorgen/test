@@ -91,16 +91,50 @@ class MainWindow(QMainWindow):
         # painter.end()
 
         # step5
+        # from random import randint
+        # painter = QPainter(self.label.pixmap())
+        # pen = QPen()
+        # pen.setWidth(3)
+        # pen.setColor(QColor('#EB5160'))
+        # painter.setPen(pen)
+        # painter.drawRoundedRect(40, 40, 100, 100, 10, 10)
+        # painter.drawRoundedRect(80, 80, 100, 100, 10, 50)
+        # painter.drawRoundedRect(120, 120, 100, 100, 50, 10)
+        # painter.drawRoundedRect(160, 160, 100, 100, 50, 50)
+        # painter.end()
+
+        # step6
+        # from random import randint
+        # painter = QPainter(self.label.pixmap())
+        # pen = QPen()
+        # pen.setWidth(3)
+        # pen.setColor(QColor(204, 0, 0))
+        # painter.setPen(pen)
+        # painter.drawEllipse(10, 10, 100, 100)
+        # painter.drawEllipse(10, 10, 150, 200)
+        # painter.drawEllipse(10, 10, 200, 300)
+        # painter.end()
+
+        # step7
         from random import randint
         painter = QPainter(self.label.pixmap())
         pen = QPen()
         pen.setWidth(3)
-        pen.setColor(QColor('#EB5160'))
+        pen.setColor(QColor(204, 0, 0))
         painter.setPen(pen)
-        painter.drawRoundedRect(40, 40, 100, 100, 10, 10)
-        painter.drawRoundedRect(80, 80, 100, 100, 10, 50)
-        painter.drawRoundedRect(120, 120, 100, 100, 50, 10)
-        painter.drawRoundedRect(160, 160, 100, 100, 50, 50)
+
+        # brush = QBrush()
+        # brush.setColor(QColor('#FFD141'))
+        # # brush.setStyle(Qt.Dense1Pattern)
+        # brush.setStyle(Qt.SolidPattern)
+        # painter.setBrush(brush)
+
+        painter.drawEllipse(QPoint(100, 100), 10, 10)
+        painter.drawEllipse(QPoint(100, 100), 15, 20)
+        painter.drawEllipse(QPoint(100, 100), 20, 25)
+        painter.drawEllipse(QPoint(100, 100), 25, 30)
+        painter.drawEllipse(QPoint(100, 100), 30, 35)
+        painter.end()
 
 
 def main():
