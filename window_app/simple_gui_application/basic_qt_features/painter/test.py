@@ -1,8 +1,8 @@
-# Author: Lila Morgen
-# ProjectName: test
-# FileName: paint_panel.py
-# Date: 2020/11/22
-# Description:
+# Version : python 3.7.4
+# File : test.py
+# Author : Lila Morgen
+# Time : 2020/11/22 23:05
+# description : 
 
 import sys
 from PyQt5.QtWidgets import *
@@ -38,7 +38,7 @@ class Canvas(QLabel):
         pen.setColor(self.pen_color)
         painter.setPen(pen)
 
-        painter.drawLine(self.last_x, self.last_x, e.x(), e.y())
+        painter.drawLine(self.last_x, self.last_y, e.x(), e.y())
         painter.end()
         self.update()
 
@@ -72,7 +72,7 @@ class MainWindow(QMainWindow):
         self.init_ui()
 
     def init_ui(self):
-        self.setWindowTitle('Paint Panel')
+        self.setWindowTitle('Test')
 
         self.canvas = Canvas()
         v_layout = QVBoxLayout()
