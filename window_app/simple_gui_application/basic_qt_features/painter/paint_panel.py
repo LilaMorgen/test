@@ -38,7 +38,7 @@ class Canvas(QLabel):
         pen.setColor(self.pen_color)
         painter.setPen(pen)
 
-        painter.drawLine(self.last_x, self.last_x, e.x(), e.y())
+        painter.drawLine(self.last_x, self.last_y, e.x(), e.y())
         painter.end()
         self.update()
 
